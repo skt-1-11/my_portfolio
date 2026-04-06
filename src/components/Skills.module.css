@@ -1,0 +1,157 @@
+.section {
+  position: relative;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-subtle) 30%, var(--border-subtle) 70%, transparent);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: end;
+  margin-bottom: var(--space-3xl);
+}
+
+.title {
+  font-size: var(--fs-h2);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.subtitle {
+  max-width: 500px;
+  font-size: 1.05rem;
+}
+
+/* Focus strip */
+.focusStrip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-4xl);
+}
+
+.focusCard {
+  position: relative;
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.focusAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  opacity: 0.5;
+}
+
+.focusLabel {
+  display: block;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.4rem;
+}
+
+.focusCard p {
+  font-size: var(--fs-small);
+}
+
+/* Constellation section */
+.constellationSection {
+  margin-bottom: var(--space-4xl);
+}
+
+/* Expertise grid */
+.expertiseGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.expertiseCard {
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.expertiseHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.expertiseHeader h3 {
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.pctBadge {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  font-family: var(--font-mono);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  border: 1px solid;
+}
+
+/* Progress bar */
+.levelBar {
+  width: 100%;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.levelFill {
+  height: 100%;
+  border-radius: inherit;
+}
+
+.tagCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.skillPill {
+  display: inline-flex;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+@media (max-width: 1024px) {
+  .expertiseGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .header { grid-template-columns: 1fr; }
+  .focusStrip { grid-template-columns: 1fr; }
+  .expertiseGrid { grid-template-columns: 1fr; }
+}
